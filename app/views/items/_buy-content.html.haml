@@ -1,0 +1,151 @@
+.buy-content
+  .buy-content__inner
+    %form(action="#")
+
+      -# 出品画像
+      .buy-content__inner__up
+        .buy-content__inner__up__box
+          .buy-content__inner__up__box__name
+            .buy-content__inner__up__box__name__image
+              %label.title(for="#") 出品画像
+              %span.have-to 必須
+          %p.ten-up 最大１０枚までアップロードできます
+          .buy-content__inner__up__box__photos
+            .buy-content__inner__up__box__photos__form
+              .buy-content__inner__up__box__photos__form__date
+                .buy-content__inner__up__box__photos__form__date__in
+                  %input(type="faile")/
+                  =icon("fa","camera")
+
+      -# 商品名、商品の説明
+      .buy-content__inner__items
+        .buy-content__inner__items__item
+          .buy-content__inner__items__item__body
+            .buy-content__inner__items__item__body__name
+              .buy-content__inner__items__item__body__name__box
+                %label.title(for="#") 商品名
+                %span.have-to 必須
+            .buy-content__inner__items__item__body__form
+              .buy-content__inner__items__item__body__form__box
+                %input(type="text" placeholder="40文字まで")/
+        .buy-content__inner__items__description
+          .buy-content__inner__items__description__items
+            .buy-content__inner__items__description__items__body
+              .buy-content__inner__items__description__items__body__box
+                %label.title(for="#") 商品の説明
+                %span.have-to 必須
+            %textarea(name="description" cols="30" rows="10" placeholder="商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。")
+            .buy-content__inner__items__description__items__text-sum
+
+      -# 商品の詳細
+      .buy-content__inner__dateils
+        %p.dateils 商品の詳細
+        .buy-content__inner__dateils__style
+          .buy-content__inner__dateils__style__body
+            .buy-content__inner__dateils__style__body__box
+              .buy-content__inner__dateils__style__body__box__item
+                %label.title(for="#") カテゴリー
+                %span.have-to 必須
+            .buy-content__inner__dateils__style__body__form
+              .buy-content__inner__dateils__style__body__form__box
+                %select(name="category")
+                  %option(value="選択してください")
+                %i.drop-dwen
+                
+        .buy-content__inner__dateils__style
+          .buy-content__inner__dateils__style__body
+            .buy-content__inner__dateils__style__body__box
+              .buy-content__inner__dateils__style__body__box__item
+                %label.title(for="#") ブランド
+                %span.any.have-to 任意
+            .buy-content__inner__dateils__style__body__form
+              .buy-content__inner__dateils__style__body__form__box
+                %input(type="text")/
+
+        .buy-content__inner__dateils__style
+          .buy-content__inner__dateils__style__body
+            .buy-content__inner__dateils__style__body__box
+              .buy-content__inner__dateils__style__body__box__item
+                %label.title(for="#") 商品の状態
+                %span.have-to 必須
+            .buy-content__inner__dateils__style__body__form
+              .buy-content__inner__dateils__style__body__form__box
+                %select(name="category")
+                  %option(value="選択してください")
+                %i.drop-dwen
+
+      -# 配送について
+      .buy-content__inner__delivery
+        %p.dateils 配送について
+        %a(href="#")
+          %i
+        .buy-content__inner__delivery__style
+          .buy-content__inner__delivery__style__body
+            .buy-content__inner__delivery__style__body__box
+              .buy-content__inner__delivery__style__body__box__item
+                %label.title(for="#") 配送料の負担
+                %span.have-to 必須
+            .buy-content__inner__delivery__style__body__form
+              .buy-content__inner__delivery__style__body__form__box
+                %select(name="category")
+                  %option(value="選択してください")
+                %i.drop-dwen
+
+        .buy-content__inner__delivery__style
+          .buy-content__inner__delivery__style__body
+            .buy-content__inner__delivery__style__body__box
+              .buy-content__inner__delivery__style__body__box__item
+                %label.title(for="#") 配送元の地域
+                %span.have-to 必須
+            .buy-content__inner__delivery__style__body__form
+              .buy-content__inner__delivery__style__body__form__box
+                %select(name="category")
+                  %option(value="選択してください")
+                %i.drop-dwen
+
+        .buy-content__inner__delivery__style
+          .buy-content__inner__delivery__style__body
+            .buy-content__inner__delivery__style__body__box
+              .buy-content__inner__delivery__style__body__box__item
+                %label.title(for="#") 配送までの日数
+                %span.have-to 必須
+            .buy-content__inner__delivery__style__body__form
+              .buy-content__inner__delivery__style__body__form__box
+                %select(name="category")
+                  %option(value="選択してください")
+                %i.drop-dwen
+
+      -# 販売価格、送信ボタン
+      .buy-content__inner__btn
+        %p.dateils 価格 (¥300~9,999,999)
+        %a(href="#")
+          %i
+        .buy-content__inner__btn__buys
+          .buy-content__inner__btn__buys__style
+            .buy-content__inner__btn__buys__style__body
+              .buy-content__inner__btn__buys__style__body__item
+                %label.title(for="#") 販売価格
+                %span.have-to 必須
+            %span.en ¥
+            .buy-content__inner__btn__buys__style__form
+              .buy-content__inner__btn__buys__style__form__box
+                %input(type="unmber" placeholder="0")/
+
+          .buy-content__inner__btn__buys__style
+            .buy-content__inner__btn__buys__style__fee
+              .buy-content__inner__btn__buys__style__fee__ten
+                販売手数料(10%)
+            %span.mainas
+
+          .buy-content__inner__btn__buys__style
+            .buy-content__inner__btn__buys__style__profit
+              販売利益
+            %span.mainas
+
+        .buy-content__inner__btn__submit
+          %button.exhibitin(type="submit") 出品する
+          %button.draft(type="button") 下書き保存
+          %a(href="#") もどる
+        %p.exhibition
+          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+

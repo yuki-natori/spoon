@@ -1,0 +1,37 @@
+.footer
+  %ul.contents
+    %li.content
+      %h2.head spoon500について
+      %ul.lists
+        %li
+          %a(href="#") 会社概要(運営会社)
+        %li
+          %a(href="#") プライバシーポリシー
+        %li
+          %a(href="#") FIRIMA利用規約
+        %li
+          %a(href="#") ポイントに関する特約
+    %li.content
+      %h2.head spoon500を見る
+      %ul.lists
+        %li
+          %a(href="#") カテゴリー一覧
+        %li
+          %a(href="#") ブランド一覧
+    %li.content
+      %h2.head ヘルプ＆ガイド
+      %ul.lists
+        %li
+          %a(href="#") spoon500ガイド
+        %li
+          %a(href="#") spoon500ロゴ利用ガイドライン
+        %li
+          %a(href="#") お知らせ
+  .footer__logo
+    %a(href="#")
+      = image_tag "IMG_3179.JPG"
+  %p ©︎ SPOON500
+= link_to new_item_path do
+  .footer__btn
+    %span.text 出品
+    =icon("fa","camera-retro")
