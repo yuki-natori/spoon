@@ -1,24 +1,57 @@
 # README
+```
+git clone https://github.com/yuki-natori/spoon.git
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## DB設計
+### Usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string||
 
-* Ruby version
+#### Association
+- has_many :comments
+- has_many :items
+- has_many :likes
+- has_many :sns_credentials
+- has_many :trading_partners
+- has_one :credit_card
+- has_one :profile
 
-* System dependencies
+### Itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|price|integer|null: false|
+|description|text|null: false|
+|condition|integer|null: false|
+|shipping_fee|integer|null: false|
+|shipping_from|integer|null: false|
+|days_before_shipping|integer|null: false|
+|shipping_method|integer|null: false|
+|trade_status|integer|null: false|
+|brand_id|references|index: true, foreign_key: true|
+|category_id|references|null: false. index:true, foreign_key:true|
+|user_id|references|null: false. index:true, foreign_key:true|
+|size_id|references|null: false. index:true, foreign_key:true|
 
-* Configuration
+#### Association
+- belongs_to :brand
+- belongs_to :category
+- belongs_to :user
+- belongs_to size
+- has_many :comments
+- has_many :images
+- has_many :likes
+- has_one :order
 
-* Database creation
+### Imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|item_id|references|null: false, index: true, foreign_key: true|
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- belong_to :item
