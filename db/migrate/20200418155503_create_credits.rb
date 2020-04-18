@@ -1,4 +1,4 @@
-class Credits < ActiveRecord::Migration[5.2]
+class CreateCredits < ActiveRecord::Migration[5.2]
   def change
     create_table :credits do |t|
       t.integer :authorization_code, null: false, unique: true
