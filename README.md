@@ -21,6 +21,40 @@ git clone https://github.com/yuki-natori/spoon.git
 - has_one :credit_card
 - has_one :profile
 
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|last_name|string||
+|first_name|string||
+|last_name_kane|string||
+|first_name_kane|string||
+|birth_year|integer||
+|birth_manth|integer||
+|birth_day|integer||
+|phone_number|integer|unique:true|
+|zipcode|integer||
+|prefecture|integer||
+|city|string||
+|block|string||
+|building|string||
+|user_id|references|null:false,index:true,foreign_key:true|
+
+#### Association
+- belongs_to user
+
+## credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|authorization_code|integer|null:false,unique:true|
+|security_code|integer|null:false|
+|month|integer|null:false|
+|year|integer|null:false|
+|user_id|references|null:false,index:true,foreign_key:true|
+
+#### Association
+- belongs_to user
+
 ### Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
