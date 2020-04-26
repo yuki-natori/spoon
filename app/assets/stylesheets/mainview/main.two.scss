@@ -1,0 +1,28 @@
+.main-two {
+  background-color: #000;
+  h2.consept {
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
+    padding: 50px;
+  }
+  &__image {
+    &__make {
+      display: flex;
+      padding: 50px;
+      img {
+        border-radius: 3px;
+        padding: 0 30px;
+      }
+      h3.make {
+        color: #fff;
+      }
+      p.make {
+        color: #fff;
+      }
+    }
+    :nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+}
