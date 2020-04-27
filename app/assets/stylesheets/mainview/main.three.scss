@@ -1,0 +1,167 @@
+.main-three {
+  margin-bottom: 100px;
+  letter-spacing: .05em;
+  background-color: #000;
+  &__header {
+    position: relative;
+    h2.title {
+      margin-bottom: 40px;
+      font-size: 333%;
+      line-height: 50px;
+      height: 50px;
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+      &__more {
+        position: absolute;
+        top: 45%;
+        right: 3vw;
+        a.more {
+          text-decoration: none;
+          opacity: .3;
+          line-height: 1;
+          font-size: 93%;
+          color: #fff;
+          backface-visibility: hidden;
+        }
+        :after {
+          content: "\e900";
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  &__movie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    &__list {
+      width: 25%;
+      background-color: #1f1f1f;
+      a.list {
+        text-decoration: none;
+        color: #fff;
+        text-decoration: none;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        &__photo {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 82.35%;
+          position: relative;
+          background-color: #000;
+          overflow: hidden;
+          &__ratio {
+            position: absolute;
+            margin: auto;
+            top: -100%;
+            bottom: -100%;
+            z-index: 0;
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            img.movie {
+              -webkit-transition: all .4s ease;
+              transition: all .4s ease;
+              width: 100%;
+              height: auto;
+              max-width: none;
+              z-index: 1;
+            }
+          }
+          &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.3);
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            span.icon {
+              display: none;
+              font-size: 77px;
+              opacity: .7;
+              transition: all .4s ease;
+              font-family: icomoon-jackall-util!important;
+            }
+          }
+        }
+        &__info {
+          padding: 20px 15px 0;
+          &__time {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+            time.date {
+              margin-right: 10px;
+              color: #999;
+              font-size: 93%;
+              line-height: 1;
+            }
+            span.white {
+              background-color: #fff;
+              color: #000;
+              padding: 2px 5px;
+              font-size: 73%;
+              line-height: 1;
+            }
+          }
+          h3.text {
+            color: #fff;
+            font-size: 93%;
+            line-height: 1.8;
+            letter-spacing: normal;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    margin-top: 0;
+    display: none;
+    a.more {
+      text-decoration: none;
+      display: block;
+      width: 200px;
+      border: 1px solid #fff;
+      padding: 17px 0;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1;
+      position: relative;
+      color: #fff;
+      backface-visibility: hidden;
+      cursor: pointer;
+    }
+  }
+}

@@ -8,21 +8,30 @@
   }
   &__image {
     &__make {
-      display: flex;
       padding: 50px;
       img {
         border-radius: 3px;
         padding: 0 30px;
       }
       h3.make {
+        float: right;
+        color: #fff;
+      }
+      p.make {
+        float: right;
+        color: #fff;
+      }
+    }
+    &__right {
+      padding: 50px;
+      display: flex;
+      flex-direction: row-reverse;
+      h3.make {
         color: #fff;
       }
       p.make {
         color: #fff;
       }
-    }
-    :nth-child(even) {
-      flex-direction: row-reverse;
     }
   }
 }
