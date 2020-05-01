@@ -1,36 +1,104 @@
 .main-two {
   background-color: #000;
+  position: relative;
+  padding: 50px;
   h2.consept {
     text-align: center;
     color: #fff;
     opacity: 0.8;
     padding: 50px;
   }
-  &__image {
-    &__make {
+  &__content {
+    width: 960px;
+    padding: 0;
+    margin: 0 auto;
+    &__left {
       padding: 50px;
-      img {
-        border-radius: 3px;
-        padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__imgbox {
+        position: relative;
+        left: -30px;
+        width: calc(50% + 60px);
+        figure {
+          margin: 0;
+          img {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            line-height: 1;
+            border: 0;
+            vertical-align: top;
+            border: none;
+            max-width: 100%;
+          }
+        }
       }
-      h3.make {
-        float: right;
-        color: #fff;
-      }
-      p.make {
-        float: right;
-        color: #fff;
+      &__txtbox {
+        width: calc(50%);
+        h3.title {
+          margin-bottom: 15px;
+          color: #ff6b00;
+          font-size: 42px;
+          font-size: 2.625rem;
+        }
+        &__text {
+          font-size: 18px;
+          font-size: 1.125rem;
+          p {
+            margin-bottom: 15px;
+          }
+          p.attention {
+            color: #ccc;
+            font-size: 14px;
+            font-size: .875rem;
+            margin-bottom: 15px;
+          }
+        }
       }
     }
     &__right {
       padding: 50px;
-      display: flex;
+      // margin-top: 80px;
       flex-direction: row-reverse;
-      h3.make {
-        color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__imgbox {
+        left: 0;
+        position: relative;
+        width: calc(50% + 60px);
+        figure {
+          position: relative;
+          right: -60px;
+          margin: 0;
+          img {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            line-height: 1;
+            border: 0;
+            vertical-align: top;
+            border: none;
+            max-width: 100%;
+          }
+        }
       }
-      p.make {
-        color: #fff;
+      &__txtbox {
+        width: calc(50%);
+        h3.title {
+          margin-bottom: 15px;
+          color: #ff6b00;
+          font-size: 42px;
+          font-size: 2.625rem;
+        }
+        &__text {
+          font-size: 18px;
+          font-size: 1.125rem;
+          p {
+            color: #ccc;
+            margin-bottom: 15px;
+          }
+        }
       }
     }
   }
