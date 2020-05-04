@@ -65,5 +65,9 @@ gem 'pry-rails'
 gem 'devise'
 gem 'haml-rails'
 gem "font-awesome-sass"
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+gem 'payjp'
+
