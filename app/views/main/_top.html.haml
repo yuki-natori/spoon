@@ -1,67 +1,83 @@
 .header
-  .header__inner
-    .header__inner__top
-      .header__inner__top__titel
-        %h1
-          %a(href="#")
-            = image_tag "IMG_3179.JPG"
-      .header__inner__top__form
-        .header__inner__top__form__search
-          %input(type="text")/
-          .header__inner__top__form__search__box
-            .header__inner__top__form__search__box__img
-              =icon("fas","search")
-      .header__inner__top__hidden
+  .header__nav
+    .header__nav__top
+      .header__nav__top__left
         %ul
-    .header__inner__under
-      .header__inner__under__left
-        %ul
-          %li.left-item.first
-            %a(href="#") カテゴリー
-            .header__inner__under__left__categoly
-              %ul.left
-                -# %li.left-item
-                -#   %a(href="#") 1
-                -# %li.left-item
-                -#   %a(href="#") 2
-                -# %li.left-item
-                -#   %a(href="#") 3
-                -# %li.left-item
-                -#   %a(href="#") 4
-                -# %li.left-item
-                -#   %a(href="#") 5
-                -# %li.left-item
-                -#   %a(href="#") 6
-                -# %li.left-item
-                -#   %a(href="#") 7
-                -# %li.left-item
-                -#   %a(href="#") 8
-                -# %li.left-item
-                -#   %a(href="#") 9
-                -# %li.left-item
-                -#   %a(href="#") 10
-                -# %li.left-item
-                -#   %a(href="#") 11
-                -# %li.left-item
-                -#   %a(href="#") 12
-                -# %li.left-item
-                -#   %a(href="#") 13
-          %li.left-item
-            %a(href="#") ブランド
-            %ul.left
-      .header__inner__under__right
-        %ul.right
+          %li.crrent
+            %a.crrent(href="#")
+              title
+              %span.down
+                %icon.down
+                  %polygon
+            .header__nav__top__left__pull 
+              -# プルダウン実装時に書き込む
+      .header__nav__top__center
+        %ul.group
+          %li.menu
+            %a.item(href="#")
+              one
+          %li.menu
+            %a.item(href="#")
+              two
+          %li.menu
+            %a.item(href="#")
+              three
+      .header__nav__top__right
+        %ul.login
           - if user_signed_in?
-            %li.right-item.login
+            %li.login
               -# = link_to user_path(current_user) do
-                マイページ ＃マイページがないためエラー
-            %li.right-item.new
+                マイページ
+            %li.login
               = link_to destroy_user_session_path, method: 'delete' do
                 ログアウト
           - else
-            %li.right-item.login
-              = link_to new_user_session_path do
-                ログイン
-            %li.right-item.new
+            %li.login
               = link_to new_user_registration_path do
                 新規登録
+            %li.login
+              = link_to new_user_session_path do
+                ログイン
+        
+    .header__nav__under
+      .header__nav__under__logo
+        =link_to image_tag "IMG_3179.JPG" do
+          %span.logo
+          %span.sub
+            %before
+      .header__nav__under__service
+        .header__nav__under__service__itemleft
+          -# ドロップダウンメニュー
+          %ul.itemleft
+            %li.lists
+              %a.list(href="#")
+                one
+            %li.lists
+              %a.list(href="#")
+                two
+            %li.lists
+              %a.list(href="#")
+                three
+            %li.lists
+              %a.list.last(href="#")
+                four
+          %after
+        .header__nav__under__service__itemright
+          %ul.itemright
+            %li.lists
+              %a.list(href="#")
+                one
+            %li.lists
+              %a.list(href="#")
+                two
+            %li.lists
+              %a.list(href="#")
+                three
+        -# .header__nav__under__service__search
+        -#   .header__nav__under__service__search__form
+        -#     .header__nav__under__service__search__form__button
+        -#       %before
+        -#       .header__nav__under__service__search__form__button__crcle
+        -#       .header__nav__under__service__search__form__button__path
+              -# %input.search(type="text")/
+                -# 後からCSSで隠す様調整
