@@ -73,7 +73,7 @@
           height: 0;
           padding-bottom: 56.25%;
           overflow: hidden;
-          img.movie {
+          iframe.movie {
             -webkit-transition: all .4s ease;
             transition: all .4s ease;
             width: 100%;
@@ -83,7 +83,7 @@
           }
         }
         &__overlay {
-          position: absolute;
+          // position: absolute;
           top: 0;
           left: 0;
           width: 100%;
