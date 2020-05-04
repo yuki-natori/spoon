@@ -1,1 +1,33 @@
-.main-one
+-# 写真もしくは動画のスライドなど表示ページ
+
+.slideshow
+  %input#switch1{:checked => "checked", :name => "slideshow", :type => "radio"}/
+  %input#switch2{:name => "slideshow", :type => "radio"}/
+  %input#switch3{:name => "slideshow", :type => "radio"}/
+  %input#switch4{:name => "slideshow", :type => "radio"}/
+  %input#switch5{:name => "slideshow", :type => "radio"}/
+  .slideContents
+    %section#slide1
+      = image_tag "3160039_l.jpg"
+    %section#slide2
+      = image_tag "1052451_s.jpg"
+    %section#slide3
+      = image_tag "3193683_m.jpg"
+    %section#slide4
+      = image_tag "1024835_s.jpg"
+    %section#slide5
+      = image_tag "keiryu001.jpg"
+  %p.arrow.prev
+    %i.ico
+    %label{:for => "switch1"}
+    %label{:for => "switch2"}
+    %label{:for => "switch3"}
+    %label{:for => "switch4"}
+    %label{:for => "switch5"}
+  %p.arrow.next
+    %i.ico
+    %label{:for => "switch1"}
+    %label{:for => "switch2"}
+    %label{:for => "switch3"}
+    %label{:for => "switch4"}
+    %label{:for => "switch5"}

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_080611) do
+ActiveRecord::Schema.define(version: 2020_04_18_070059) do
+
+  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "authorization_code", null: false
+    t.integer "security_code", null: false
+    t.integer "manth", null: false
+    t.integer "year", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credits_on_user_id"
+  end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +42,28 @@ ActiveRecord::Schema.define(version: 2020_04_14_080611) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname"
+    t.text "body"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kane"
+    t.string "first_name_kane"
+    t.integer "birth_year"
+    t.integer "birth_manth"
+    t.integer "birth_day"
+    t.integer "phone_number"
+    t.integer "zipcode"
+    t.integer "prefecture"
+    t.string "city"
+    t.string "block"
+    t.string "building"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -43,6 +76,8 @@ ActiveRecord::Schema.define(version: 2020_04_14_080611) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "credits", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
+  add_foreign_key "profiles", "users"
 end
