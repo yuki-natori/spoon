@@ -53,8 +53,8 @@
         %ul.right
           - if user_signed_in?
             %li.right-item.login
-              = link_to user_path(current_user) do 
-                マイページ
+              -# = link_to user_path(current_user) do
+                マイページ ＃マイページがないためエラー
             %li.right-item.new
               = link_to destroy_user_session_path, method: 'delete' do
                 ログアウト
