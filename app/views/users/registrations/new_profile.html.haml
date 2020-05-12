@@ -1,0 +1,102 @@
+-# 住所登録ヘッダー
+.login-header
+  %h1.login-head
+    = link_to "#", class: "login-head" do
+      = image_tag "IMG_3179.JPG", class: "login-head"
+  .login-header__nav
+    %ol.active
+      %li.active 
+        会員情報
+        .login-header__nav__round
+          %after
+      %li 
+        住所登録
+        .login-header__nav__round
+          %before
+          %after
+      %li 
+        完了
+        .login-header__nav__round
+          %before
+      %after
+
+-# 住所登録フォーム
+.login-main
+  %sction.login
+    %h2.login 住所登録入力
+    = form_for @profile do |f|
+      = render "devise/shared/error_messages", resource: @profile
+
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :郵便番号
+            %span.login 必須
+            = f.text_field :zipcode, class: :login, placeholder: "1234567"
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :都道府県
+            %span.login 必須
+            = f.select :prefecture, Profile.prefectures.keys,  placeholder: "北海道"
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :市町村
+            %span.login 必須
+            = f.text_field :city, class: :login, placeholder: "札幌市"
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :番地
+            %span.login 必須
+            = f.text_field :block, class: :login, placeholder: "中央区1-1-1"
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :建物名
+            %span.login 任意
+            = f.text_field :building, class: :login, placeholder: "札幌アパート101"
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :電話番号
+            %span.login 任意
+            = f.text_field :phone_number, class: :login, placeholder: "◯◯◯-▲▲▲-□□□□"
+
+      .login-main__inner
+        .login-main__inner__terms
+          %p.terms 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+        = f.submit '次へ', class: "btn"
+        .login-main__inner__Confirmation
+          %p.Confirmation
+            %a.Confirmation(href="#")
+              本人情報の登録について
+              %i.Confirmation
+                %before
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# = form_for @profile do |f|
+-#   = render "devise/shared/error_messages", resource: @profile
+-#   .field
+-#     = f.label :zipcode
+-#     %br/
+-#     = f.text_field :zipcode
+-#   .field
+-#     = f.label :profile
+-#     %br/
+-#     = f.text_field :profile
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"

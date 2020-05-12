@@ -43,15 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_070059) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname"
     t.text "body"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_name_kane"
-    t.string "first_name_kane"
-    t.integer "birth_year"
-    t.integer "birth_manth"
-    t.integer "birth_day"
     t.integer "phone_number"
     t.integer "zipcode"
     t.integer "prefecture"
@@ -65,6 +57,12 @@ ActiveRecord::Schema.define(version: 2020_04_18_070059) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.date "birthday"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
