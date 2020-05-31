@@ -1,9 +1,7 @@
 class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
     create_table :profiles do |t|
-      
       t.text :body
-      
       t.integer :phone_number,unique: true
       t.integer :zipcode
       t.integer :prefecture

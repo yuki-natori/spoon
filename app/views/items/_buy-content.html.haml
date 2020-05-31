@@ -1,21 +1,34 @@
 .buy-content
   .buy-content__inner
-    %form(action="#")
-
+    = form_with model:@item, local:true do |f|
+    
       -# 出品画像
       .buy-content__inner__up
         .buy-content__inner__up__box
           .buy-content__inner__up__box__name
             .buy-content__inner__up__box__name__image
-              %label.title(for="#") 出品画像
+              = f.label :出品画像
               %span.have-to 必須
           %p.ten-up 最大１０枚までアップロードできます
-          .buy-content__inner__up__box__photos
-            .buy-content__inner__up__box__photos__form
-              .buy-content__inner__up__box__photos__form__date
-                .buy-content__inner__up__box__photos__form__date__in
-                  %input(type="faile")/
-                  =icon("fa","camera")
+          #image-box
+            #previews
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+
+            = f.fields_for :images do |i| 
+              .js-file_group{"data-index": "#{i.index}"}
+                = i.file_field :image, class: 'js-file'
+                %span.js-remove 削除
+                =icon("fa","camera")
+
+              - if @item.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+
+            - if @item.persisted?
+              .js-file_group{"data-index": "#{@item.images.count}"}
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                .js-remove 削除
 
       -# 商品名、商品の説明
       .buy-content__inner__items
@@ -23,18 +36,18 @@
           .buy-content__inner__items__item__body
             .buy-content__inner__items__item__body__name
               .buy-content__inner__items__item__body__name__box
-                %label.title(for="#") 商品名
+                = f.label :商品名
                 %span.have-to 必須
             .buy-content__inner__items__item__body__form
               .buy-content__inner__items__item__body__form__box
-                %input(type="text" placeholder="40文字まで")/
+                = f.text_field :name, placeholder: "40文字まで"
         .buy-content__inner__items__description
           .buy-content__inner__items__description__items
             .buy-content__inner__items__description__items__body
               .buy-content__inner__items__description__items__body__box
-                %label.title(for="#") 商品の説明
+                = f.label :商品の説明
                 %span.have-to 必須
-            %textarea(name="description" cols="30" rows="10" placeholder="商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。")
+            = f.text_area :description, cols: "30", rows: "10", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
             .buy-content__inner__items__description__items__text-sum
 
       -# 商品の詳細
@@ -124,12 +137,12 @@
           .buy-content__inner__btn__buys__style
             .buy-content__inner__btn__buys__style__body
               .buy-content__inner__btn__buys__style__body__item
-                %label.title(for="#") 販売価格
+                = f.label :販売価格
                 %span.have-to 必須
             %span.en ¥
             .buy-content__inner__btn__buys__style__form
               .buy-content__inner__btn__buys__style__form__box
-                %input(type="unmber" placeholder="0")/
+                = f.text_field :price, placeholder: "0"
 
           .buy-content__inner__btn__buys__style
             .buy-content__inner__btn__buys__style__fee
@@ -143,7 +156,7 @@
             %span.mainas
 
         .buy-content__inner__btn__submit
-          %button.exhibitin(type="submit") 出品する
+          = f.submit "出品する", class: "exhibitin" 
           %button.draft(type="button") 下書き保存
           %a(href="#") もどる
         %p.exhibition
