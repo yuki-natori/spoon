@@ -5,7 +5,7 @@
         %ul
           %li.crrent
             %a.crrent(href="#")
-              title
+              spoon500
               %span.down
                 %icon.down
                   %polygon
@@ -15,29 +15,16 @@
         %ul.group
           %li.menu
             %a.item(href="#")
-              one
+              spoon500とは？
           %li.menu
             %a.item(href="#")
-              two
+              spoon500の使い方
           %li.menu
             %a.item(href="#")
-              three
+              スプーンの作り方
       .header__nav__top__right
         %ul.login
-          - if user_signed_in?
-            %li.login
-              -# = link_to user_path(current_user) do
-                マイページ
-            %li.login
-              = link_to destroy_user_session_path, method: 'delete' do
-                ログアウト
-          - else
-            %li.login
-              = link_to new_user_registration_path do
-                新規登録
-            %li.login
-              = link_to new_user_session_path do
-                ログイン
+          %li.login
         
     .header__nav__under
       .header__nav__under__logo
@@ -51,33 +38,41 @@
           %ul.itemleft
             %li.lists
               %a.list(href="#")
-                one
+                商品一覧
             %li.lists
               %a.list(href="#")
-                two
+                River
             %li.lists
               %a.list(href="#")
-                three
+                Solt
             %li.lists
               %a.list.last(href="#")
-                four
+                Orignal
           %after
         .header__nav__under__service__itemright
           %ul.itemright
-            %li.lists
-              %a.list(href="#")
-                one
-            %li.lists
-              %a.list(href="#")
-                two
-            %li.lists
-              %a.list(href="#")
-                three
+            - if user_signed_in?
+              %li.lists
+                %a.list(href="#")
+                  one
+              %li.lists
+                -# = link_to user_path(current_user) do
+                  マイページ
+              %li.lists
+                = link_to destroy_user_session_path, method: 'delete', class: "list" do
+                  ログアウト
+            - else
+              %li.lists
+                = link_to new_user_registration_path, class: "list" do
+                  新規登録
+              %li.lists
+                = link_to new_user_session_path, class: "list" do
+                  ログイン
         -# .header__nav__under__service__search
         -#   .header__nav__under__service__search__form
         -#     .header__nav__under__service__search__form__button
         -#       %before
         -#       .header__nav__under__service__search__form__button__crcle
         -#       .header__nav__under__service__search__form__button__path
-              -# %input.search(type="text")/
-                -# 後からCSSで隠す様調整
+        -#       %input.search(type="text")/
+              -# 後からCSSで隠す様調整

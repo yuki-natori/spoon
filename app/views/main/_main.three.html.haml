@@ -1,57 +1,48 @@
-.main-three
-  .main-three__header
-    %h2.title スプーンの作り方
-    .main-three__header__more
-      %a.more(href="#")
-        %after
-  .main-three__movie
-    .main-three__movie__list
-      %a.list(href="#")
-        .main-three__movie__list__photo
-          .main-three__movie__list__photo__ratio
-            %iframe.movie{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/Z20mqA1yDcA", :width => "560"}
-          .main-three__movie__list__photo__overlay
-            %spon.icon
-        .main-three__movie__list__info
-          .main-three__movie__list__info__time
-            %time.date
-            %span.white 製作者 1
-          %h3.text youtube titel 1
-    .main-three__movie__list
-      %a.list(href="#")
-        .main-three__movie__list__photo
-          .main-three__movie__list__photo__ratio
-            %iframe.movie{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/_z7i5AZ35Ko", :width => "560"}
-          .main-three__movie__list__photo__overlay
-            %spon.icon
-        .main-three__movie__list__info
-          .main-three__movie__list__info__time
-            %time.date
-            %span.white 製作者 2
-          %h3.text youtube titel 2
-    .main-three__movie__list
-      %a.list(href="#")
-        .main-three__movie__list__photo
-          .main-three__movie__list__photo__ratio
-            %iframe.movie{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/a2gjDalEqqA", :width => "560"}
-          .main-three__movie__list__photo__overlay
-            %spon.icon
-        .main-three__movie__list__info
-          .main-three__movie__list__info__time
-            %time.date
-            %span.white 製作者 3
-          %h3.text youtube titel 3
-    .main-three__movie__list
-      %a.list(href="#")
-        .main-three__movie__list__photo
-          .main-three__movie__list__photo__ratio
-            %iframe.movie{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/6yQNs2H_BXE", :width => "560"}
-          .main-three__movie__list__photo__overlay
-            %spon.icon
-        .main-three__movie__list__info
-          .main-three__movie__list__info__time
-            %time.date
-            %span.white 製作者 4
-          %h3.text youtube titel 4
-  .main-three__button
-    %a.more(href="#") more
+.main-four
+  .main-four__title
+    %h2.title - spoon500の使い方 -
+  .main-four__content
+    .main-four__content__step
+      .main-four__content__step__side
+        .main-four__content__step__side__img
+          %h2.img 買いたいとき
+          = image_tag "183637_s.jpg", width: "400px",hight: "270px", class: "img"
+          %h3.img まずは登録！ 
+          %p.img まずは新規登録を行い、アカウントを作成しましょう
+      .main-four__content__step__center
+        %h3.center Stap 1
+      .main-four__content__step__side
+        .main-four__content__step__side__img
+          %h2.img 売りたいとき
+          = image_tag "183637_s.jpg", width: "400px",hight: "270px", class: "img" 
+          %h3.img まずは登録！
+          %p.img まずは新規登録を行い、アカウントを作成しましょう
+
+    .main-four__content__step
+      .main-four__content__step__side
+        .main-four__content__step__side__img
+          = image_tag "3318408_s.jpg", width: "400px",hight: "270px", class: "img"
+          %h3.img 支払い方法
+          %p.img お支払いはクレジット決済となります
+      .main-four__content__step__center
+        %h3.center Stap 1
+      .main-four__content__step__side
+        .main-four__content__step__side__img
+          = image_tag "3250079_s.jpg", width: "400px",hight: "270px", class: "img" 
+          %h3.img 商品登録
+          %p.img 出品はアカウントの作成のみで行えます
+
+    .main-four__content__step
+      .main-four__content__step__side
+        .main-four__content__step__side__img
+          = image_tag "3171151_s.jpg", width: "400px",hight: "270px", class: "img"
+          %h3.img 購入 
+          %p.img お好きな商品を見つけて購入しましょう
+      .main-four__content__step__center
+        %h3.center Stap 1
+      .main-four__content__step__side
+        .main-four__content__step__side__img
+          = image_tag "704122_s.jpg", width: "400px",hight: "270px", class: "img" 
+          %h3.img 出品
+          %p.img 出品したら、気に入った人が来るのを待ちましょう
+    

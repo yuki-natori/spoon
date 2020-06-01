@@ -7,6 +7,7 @@
     color: #fff;
     opacity: 0.8;
     padding: 50px;
+    font-size: 333%;
   }
   &__content {
     width: 960px;
@@ -47,12 +48,14 @@
           font-size: 1.125rem;
           p {
             margin-bottom: 15px;
+            margin-top: 25px;
           }
           p.attention {
             color: #ccc;
-            font-size: 14px;
-            font-size: .875rem;
+            // font-size: 14px;
+            // font-size: .875rem;
             margin-bottom: 15px;
+            margin-top: 25px;
           }
         }
       }
