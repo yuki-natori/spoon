@@ -12,6 +12,25 @@ class User < ApplicationRecord
     presence: true,
     length: { maximum: 20 }
 
+  validates :last_name,
+    presence: true,
+    length: { maximum: 35 }
+
+  validates :first_name,
+    presence: true,
+    length: { maximum: 35 }
+
+  validates :last_name_kana,
+    presence: true,
+    length: { maximum: 35 }
+
+  validates :first_name_kana,
+    presence: true,
+    length: { maximum: 35 }
+
+  validates :birthday,
+    presence: true
+
   validates :email,
     presence: true,
     uniqueness: { message: "メールアドレスに誤りがあります。ご確認いただき、正しく変更してください。" },
@@ -22,9 +41,6 @@ class User < ApplicationRecord
     confirmation: { message: "パスワードとパスワード（確認）が一致しません" },
     length: { in: 6..128, message: "パスワードは6文字以上128文字以下で入力してください" },
     format: { with: /\A(?=.*[^\d])+/, allow_blank: true, message: "数字のみのパスワードは設定できません" }
-
-  validates :password_confirmation,
-    presence: true
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(uid: auth["uid"], provider: auth["provider"]).first

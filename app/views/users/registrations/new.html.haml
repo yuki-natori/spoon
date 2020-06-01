@@ -1,21 +1,98 @@
-%h2 Sign up 
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+-# 会員情報ヘッダー
+.login-header
+  %h1.login-head
+    = link_to "#", class: "login-head" do
+      = image_tag "IMG_3179.JPG", class: "login-head"
+  .login-header__nav
+    %ol.active
+      %li.active 
+        会員情報
+        .login-header__nav__round
+          %after
+      %li 
+        電話番号認証
+        .login-header__nav__round
+          %before
+          %after
+      %li 
+        完了
+        .login-header__nav__round
+          %before
+      %after
+
+-# ユーザー登録フォーム
+.login-main
+  %sction.login
+    %h2.login 会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .login-main__inner
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :ニックネーム
+            %span.login 必須
+            = f.text_field :nickname, class: :login, placeholder: "釣り太郎"
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :メールアドレス
+            %span.login 必須
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "携帯、PCでも可"
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :パスワード
+            %span.login 必須
+            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
+        .login-main__inner__form
+          .login-main__inner__form__box
+            = f.label :パスワード（確認用）
+            %span.login 必須
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
+            %p.login ※英字と数字の両方を含めて設定してください
+            .login-main__inner__form__box__check
+              .login-main__inner__form__box__check__pass
+                %input.pass(type="checkbox")/
+                %i.pass
+                  %before
+                %label.pass(for="password") パスワードを表示する
+
+        .login-main__inner__form
+          %h3.login
+          %p.note 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+        .login-main__inner__form
+          %div
+            = f.label :お名前（全角）
+            %span.name 必須
+          = f.text_field :first_name, class: :name, placeholder: "例) 釣り"
+          = f.text_field :last_name, class: :last, placeholder: "例) 太郎"
+        .login-main__inner__form
+          %div
+            = f.label :お名前カナ（全角）
+            %span.name 必須
+          = f.text_field :first_name_kana, class: :name, placeholder: "例) ツリ"
+          = f.text_field :last_name_kana, class: :last, placeholder: "例) タロウ"
+
+        .login-main__inner__form
+          = f.label :生年月日
+          %span.birthday 必須
+          %br/
+          .login-main__inner__form__birthday
+            .login-main__inner__form__birthday__date
+              -# %i.date
+                %before
+              = f.date_select(:birthday,with_css_classes:'birthday',use_month_numbers:true, start_year:Time.now.year, end_year:1900, )
+          %input.date(type="hidden")/
+          .login-main__inner__form__birthday__text
+            %after
+          %p.text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+      .login-main__inner
+        .login-main__inner__terms
+          %p.terms 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+        = f.submit '次へ', class: "btn"
+        .login-main__inner__Confirmation
+          %p.Confirmation
+            %a.Confirmation(href="#")
+              本人情報の登録について
+              %i.Confirmation
+                %before

@@ -9,6 +9,13 @@ git clone https://github.com/yuki-natori/spoon.git
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
+|last_name|string||
+|first_name|string||
+|last_name_kane|string||
+|first_name_kane|string||
+|birth_year|integer||
+|birth_manth|integer||
+|birth_day|integer||
 |email|string|null: false, unique: true|
 |password|string||
 
@@ -25,13 +32,6 @@ git clone https://github.com/yuki-natori/spoon.git
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
-|last_name|string||
-|first_name|string||
-|last_name_kane|string||
-|first_name_kane|string||
-|birth_year|integer||
-|birth_manth|integer||
-|birth_day|integer||
 |phone_number|integer|unique:true|
 |zipcode|integer||
 |prefecture|integer||
