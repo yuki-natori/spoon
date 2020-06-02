@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:new, :create, :edit]
+  before_action :set_item, except: [:index, :new, :create, :edit]
+
+  def index
+  end
+
   def new
     @item = Item.new
     @item.images.new
@@ -23,9 +27,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def show
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   private

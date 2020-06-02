@@ -37,7 +37,7 @@
           -# ドロップダウンメニュー
           %ul.itemleft
             %li.lists
-              %a.list(href="#")
+              = link_to items_path, class: "list" do
                 商品一覧
             %li.lists
               %a.list(href="#")
@@ -68,11 +68,4 @@
               %li.lists
                 = link_to new_user_session_path, class: "list" do
                   ログイン
-        -# .header__nav__under__service__search
-        -#   .header__nav__under__service__search__form
-        -#     .header__nav__under__service__search__form__button
-        -#       %before
-        -#       .header__nav__under__service__search__form__button__crcle
-        -#       .header__nav__under__service__search__form__button__path
-        -#       %input.search(type="text")/
-              -# 後からCSSで隠す様調整
+       

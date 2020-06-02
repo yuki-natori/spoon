@@ -42,9 +42,15 @@
       }
       &__center {
         margin: 0 40px;
-        padding-top: 200px;
-        h3.center {
+        h3.one {
+          padding-top: 200px;
+          color: #fff;
           font-size: 38px;
+        }
+        h3.center {
+          color: #fff;
+          font-size: 38px;
+          padding-top: 110px;
         }
       }
     }
