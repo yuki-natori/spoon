@@ -72,4 +72,4 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'payjp'
-
+gem 'dotenv-rails'
