@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create, :edit]
 
   def index
+    @items = Item.all.includes(:images)
   end
 
   def new
