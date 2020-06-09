@@ -9,7 +9,7 @@
       margin-left: 20px;
       margin-right: 20px;
       &__pan {
-        display: none;
+        // display: none;
         margin-bottom: 20px;
         &__link {
           display: none;
@@ -85,7 +85,7 @@
               text-decoration: none;
               font-size: 133%;
               margin-left: 15px;
-              font-family: "Font Awesome 5 Brands";
+              // font-family: "Font Awesome 5 Brands";
               padding: 0;
               cursor: pointer;
               border: 0;
@@ -103,17 +103,18 @@
               background-size: 30px;
               border-radius: 4px;
               opacity: 1;
-              display: none!important;
+              // display: none!important;
               background-repeat: repeat;
               float: none;
               overflow: hidden;
               padding: 0;
+              color: #fff;
             }
             a.twitter {
               text-decoration: none;
               font-size: 133%;
               margin-left: 15px;
-              font-family: "Font Awesome 5 Brands";
+              // font-family: "Font Awesome 5 Brands";
               padding: 0;
               cursor: pointer;
               border: 0;
@@ -131,11 +132,12 @@
               background-size: 30px;
               border-radius: 4px;
               opacity: 1;
-              display: none!important;
+              // display: none!important;
               background-repeat: repeat;
               float: none;
               overflow: hidden;
               padding: 0;
+              color: #fff;
             }
           }
         }

@@ -5,8 +5,8 @@
         .index-content__head__texts__pan__link
           .index-content__head__texts__pan__link__list
             %span.list
-              %a.list(href="#") トップページ
-              %i.list
+              %a.list(href="#") トップページ 
+              = icon("fa","angle-right", class: "list")
             %span.list
               %a.list(href="#") アイテム一覧
               %i.list
@@ -17,16 +17,16 @@
       .index-content__head__sns__icons
         .index-content__head__sns__icons__icon
           .index-content__head__sns__icons__icon__fw
-            %a.facebook(href="#")
-            %i.facebook
-            %a.twitter(href="#")
-            %i.twitter
+            = link_to "https://www.facebook.com/", class: "facebook" do
+              = icon("fab", "facebook", class: "facebook")
+            = link_to "https://twitter.com/", class: "twitter" do
+              = icon("fab", "twitter", class: "twitter")
 
   .index-content__main
     .index-content__main__box
       .index-content__main__box__card
         - @items.each do |item|
-          = link_to "#", class: "card" do
+          = link_to item_path(item), class: "card" do
             .index-content__main__box__card__photo
               = image_tag item.images.first.image.url, class: "card"
             .index-content__main__box__card__text
