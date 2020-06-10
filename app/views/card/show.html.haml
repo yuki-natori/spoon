@@ -1,3 +1,9 @@
+-# クレジット確認ページ
+
+-# ヘッダー
+= render "card-header"
+
+
 %label 登録クレジットカード情報
 %br
 = "**** **** **** " + @default_card_information.last4
@@ -8,3 +14,7 @@
 = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %input{ type: "hidden", name: "card_id", value: "" }
   %button 削除する
+
+
+-# フッター
+= render "card-footer"
