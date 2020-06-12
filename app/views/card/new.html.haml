@@ -1,8 +1,11 @@
 -# クレジット確認ページ
 
 -# ヘッダー
-= render "card-header"
+.card-header
+  = link_to root_path do
+    = image_tag "IMG_3179.JPG"
 
+-# コンテンツ
 .card-new
   .card-new__content
     %h2.payment 支払い方法
@@ -78,7 +81,8 @@
               -# カード裏面の番号とは？
         %p.payment
         #card_token
-        = submit_tag "追加する", id: "token_submit", class: "button"
+        = limnk_to  index_purchase_path do
+          = submit_tag "追加する", id: "token_submit", class: "button"
 
 -# フッター
-= render "card-footer"
+.card-footer

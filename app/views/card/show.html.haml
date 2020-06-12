@@ -1,7 +1,9 @@
 -# クレジット確認ページ
 
 -# ヘッダー
-= render "card-header"
+.card-header
+  = link_to root_path do
+    = image_tag "IMG_3179.JPG"
 
 
 %label 登録クレジットカード情報
@@ -17,4 +19,4 @@
 
 
 -# フッター
-= render "card-footer"
+.card-footer

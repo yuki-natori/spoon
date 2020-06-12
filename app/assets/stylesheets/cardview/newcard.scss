@@ -54,8 +54,6 @@
             display: inline-block;
             vertical-align: middle;
             padding: 0px 5px;
-            img.payment {
-            }
           }
         }
       }
@@ -114,8 +112,6 @@
               before {
                 content: '\e002';
               }
-            }
-            span {
             }
           }
         }
@@ -183,6 +179,26 @@
         cursor: pointer;
         text-align: center;
       }
+    }
+  }
+}
+
+.card-header {
+  -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    height: 56px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    background-color: #333;
+  a {
+    color: inherit;
+    text-decoration: none;
+    img {
+      height: 40px;
+    vertical-align: middle;
     }
   }
 }
