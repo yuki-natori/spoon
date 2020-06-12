@@ -1,0 +1,189 @@
+.index-content {
+  display: block;
+  &__head {
+    padding: 40px 0;
+    position: relative;
+    background: #000;
+    opacity: 0.9;
+    &__texts {
+      margin-left: 20px;
+      margin-right: 20px;
+      &__pan {
+        // display: none;
+        margin-bottom: 20px;
+        &__link {
+          display: none;
+          margin-left: 25px;
+          padding: 20px 0;
+          color: #999;
+          font-size: 80%;
+          letter-spacing: normal;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          &__list {
+            span.list {
+              padding-left: 0;
+              padding: 0 5px;
+              a.list {
+                padding-right: 0;
+                text-decoration: none;
+                color: #999;
+              }
+              i.list {
+              }
+            }
+          }
+        }
+      }
+      h1.title {
+        text-align: center;
+        color: #fff;
+      }
+      &__title {
+        font-size: 32px;
+        line-height: 1.2;
+        height: auto;
+      }
+      span.title {
+        font-size: 13px;
+        display: block;
+        line-height: 1;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+    }
+    &__sns {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      &__icons {
+        top: 10px;
+        bottom: auto;
+        position: absolute;
+        right: 20px;
+        &__icon {
+          &__fw {
+            line-height: 1!important;
+            touch-action: manipulation;
+            display: inline;
+            a.facebook {
+              text-decoration: none;
+              font-size: 133%;
+              margin-left: 15px;
+              // font-family: "Font Awesome 5 Brands";
+              padding: 0;
+              cursor: pointer;
+              border: 0;
+              box-shadow: none;
+              display: inline-block;
+              vertical-align: middle;
+              color: #636363!important;
+              line-height: 1;
+            }
+            i.facebook {
+              background-color: rgb(99, 99, 99);
+              width: 30px;
+              line-height: 30px;
+              height: 30px;
+              background-size: 30px;
+              border-radius: 4px;
+              opacity: 1;
+              // display: none!important;
+              background-repeat: repeat;
+              float: none;
+              overflow: hidden;
+              padding: 0;
+              color: #fff;
+            }
+            a.twitter {
+              text-decoration: none;
+              font-size: 133%;
+              margin-left: 15px;
+              // font-family: "Font Awesome 5 Brands";
+              padding: 0;
+              cursor: pointer;
+              border: 0;
+              box-shadow: none;
+              display: inline-block;
+              vertical-align: middle;
+              color: #636363!important;
+              line-height: 1;
+            }
+            i.twitter {
+              background-color: rgb(99, 99, 99);
+              width: 30px;
+              line-height: 30px;
+              height: 30px;
+              background-size: 30px;
+              border-radius: 4px;
+              opacity: 1;
+              // display: none!important;
+              background-repeat: repeat;
+              float: none;
+              overflow: hidden;
+              padding: 0;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__main {
+    background-color: #222;
+    height: 100vh;
+    &__box {
+      padding: 40px;
+      &__card {
+        // display: flex;
+        a.card {
+          text-decoration: none;
+          display: inline-block;
+          height: 250px;
+          width: 25%;
+          border: 1px solid #fff;
+        }
+        &__photo {
+          height: 80%;
+          // width: 100%;
+          text-align: center;
+          img.card {
+            height: 90%;
+            width: 65%;
+            padding: 5px;
+          }
+        }
+        &__text {
+          display: flex;
+          justify-content: space-evenly;
+          background-color: #333;
+          opacity: 0.7;
+          align-items: center;
+          h4.card {
+            color: #fff;
+            font-size: 32px;
+          }
+          span.card {
+            color: #fff;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

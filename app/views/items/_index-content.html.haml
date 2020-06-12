@@ -1,0 +1,59 @@
+.index-content
+  .index-content__head
+    .index-content__head__texts
+      .index-content__head__texts__pan
+        .index-content__head__texts__pan__link
+          .index-content__head__texts__pan__link__list
+            %span.list
+              %a.list(href="#") トップページ 
+              = icon("fa","angle-right", class: "list")
+            %span.list
+              %a.list(href="#") アイテム一覧
+              %i.list
+      %h1.title 
+        .index-content__head__texts__title Item’s
+        %span.title アイテム一覧
+    .index-content__head__sns
+      .index-content__head__sns__icons
+        .index-content__head__sns__icons__icon
+          .index-content__head__sns__icons__icon__fw
+            = link_to "https://www.facebook.com/", class: "facebook" do
+              = icon("fab", "facebook", class: "facebook")
+            = link_to "https://twitter.com/", class: "twitter" do
+              = icon("fab", "twitter", class: "twitter")
+
+  .index-content__main
+    .index-content__main__box
+      .index-content__main__box__card
+        - @items.each do |item|
+          = link_to item_path(item), class: "card" do
+            .index-content__main__box__card__photo
+              = image_tag item.images.first.image.url, class: "card"
+            .index-content__main__box__card__text
+              %h4.card= item.name
+              %span.card
+                = item.price 
+                円
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# %p= @item.name
+-# %p= @item.price 円
+-# - @item.images.each do |image|
+-#   = image_tag image.image.url

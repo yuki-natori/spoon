@@ -4,13 +4,18 @@
 @import "mainview/main.one";
 @import "mainview/main.two";
 @import "mainview/main.three";
+@import "mainview/main.four";
 @import "mainview/under";
 
+@import "itemsview/index.items";
 @import "itemsview/new.items";
+@import "itemsview/show.items";
 @import "itemsview/buy-header";
 @import "itemsview/buy-footer";
 
 @import "loginview/login-new";
+
+@import "cardview/newcard";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";

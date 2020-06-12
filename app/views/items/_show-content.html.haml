@@ -1,0 +1,60 @@
+.show-content
+  .show-content__container
+    %h1.lists= @item.name
+    .show-content__container__body
+      .show-content__container__body__imgbox
+        .show-content__container__body__imgbox__inner
+          .show-content__container__body__imgbox__inner__main
+            .show-content__container__body__imgbox__inner__main__style
+              .show-content__container__body__imgbox__inner__main__style__type
+                .show-content__container__body__imgbox__inner__main__style__type__back
+                  - @item.images.find do |image|
+                    = image_tag image.image.url, class: "main"
+            .show-content__container__body__imgbox__inner__sub
+              - @item.images.each do |image|
+                .show-content__container__body__imgbox__inner__sub__card
+                  %span.sub
+                  .show-content__container__body__imgbox__inner__sub__card__in
+                    = image_tag image.image.url, class: "sub"
+      %table.list
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              %a(href="#") 名前
+          %tr
+            %th ブランド
+            %td daiwa
+          %tr
+            %th ルアータイプ
+            %td 川
+          %tr
+            %th 配送元
+            %td 北海道
+          %tr
+            %th 発送方法
+            %td レターパック
+          %tr
+            %th 発送までの目安
+            %td 1〜２日
+      %after
+    .show-content__container__fee
+      %span.fee ¥ 500円
+    = link_to new_card_path, class: "btn" do
+      購入画面へ
+    .show-content__container__commnts
+      %p.commnts= @item.description
+    .show-content__container__likes
+      .show-content__container__likes__inner
+        %button.likes
+          %i.likes
+          %span.likes いいね！
+          %span.likesum 7
+  .show-content__container__message
+    .show-content__container__message__box
+      .show-content__container__message__box__inner
+        %form.message(action="#")
+          %p.message 出品者へ質問してみましょう！
+          %textarea.message
+          %button.message
+            %span.message コメントする

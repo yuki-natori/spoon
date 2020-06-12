@@ -43,7 +43,7 @@
             position: relative;
             border-right: 1px solid rgba(255,255,255,.2);
             a.crrent {
-              color: #006e35;
+              color: #ff6b00;
               opacity: 1!important;
               display: -webkit-box;
               display: -ms-flexbox;
@@ -56,9 +56,10 @@
               align-items: center;
               height: 100%;
               width: 100px;
+              margin: 0 20px;
               text-align: center;
               // color: rgba(255,255,255,.7);
-              font-size: 93%;
+              font-size: 20px;
               line-height: 1;
               position: relative;
               vertical-align: text-bottom;
@@ -127,7 +128,8 @@
               -ms-flex-align: center;
               align-items: center;
               height: 100%;
-              width: 100px;
+              margin: 0 15px;
+              // width: 100px;
               text-align: center;
               color: rgba(255,255,255,.7);
               font-size: 93%;
@@ -138,7 +140,7 @@
               text-decoration: none;
               -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
-              margin: 0;
+              // margin: 0;
               padding: 0;
               font-size: 100%;
               vertical-align: baseline;
@@ -355,7 +357,7 @@
                 margin-right: 40px;
                 margin-right: 45px;
                 padding: 5px 0 5px 0;
-                color: #fff;
+                color: #ff6b00;
                 position: relative;
                 font-size: 107%;
                 min-height: 0;
@@ -365,7 +367,7 @@
                 -ms-flex-align: center;
                 align-items: center;
                 padding: 0;
-                color: #999;
+                // color: #999;
                 text-transform: uppercase;
                 transition: .1s ease-in-out;
                 transition-property: color,background-color;
