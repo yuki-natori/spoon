@@ -31,7 +31,7 @@
               font-style: normal;
               font-weight: 600;
               line-height: 1.4em;
-              margin: 0;
+              margin-right: 8px;
             }
           }
         }
@@ -120,7 +120,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
@@ -178,7 +178,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
@@ -244,7 +244,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
               span.any {
                 background-color: #bfbfbf;
@@ -358,7 +358,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
@@ -464,15 +464,16 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
           span.en {
-            font-size: 14px;
+            font-size: 30px;
             margin-right: 8px;
           }
           &__form {
+            font-size: 30px;
             align-items: center;
             display: inline-flex;
             width: 100%;
@@ -480,7 +481,7 @@
             font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
             color: #222;
             display: inline-block;
-            font-size: 16px;
+            // font-size: 16px;
             &__box {
               display: inline-block;
               position: relative;
@@ -603,4 +604,27 @@
       }
     }
   }
+}
+
+#image-box {
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  background: ghostwhite;
+  #previews {
+    display: flex;
+  }
+}
+
+
+
+
+
+.js-file {
+  // display: none;
+}
+
+.js-remove {
+  // display: none;
 }

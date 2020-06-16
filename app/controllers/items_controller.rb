@@ -46,6 +46,12 @@ class ItemsController < ApplicationController
       :name,
       :price,
       :description,
+      :condition,
+      :brand,
+      :category,
+      :shipping_from,
+      :days_before_shipping,
+      :shipping_method,
       images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 

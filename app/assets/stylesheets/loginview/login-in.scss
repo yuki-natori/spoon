@@ -1,0 +1,73 @@
+// ログインヘッダー
+.login-in__header {
+  height: 128px;
+  text-align: center;
+  background-color: #333;
+  h1.login-head {
+    margin: 40px 0 0;
+    display: inline-block;
+    a.login-head {
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      display: inline-block;
+      margin: 0 8px 0 0;
+      img.login-head {
+        width: 185px;
+        height: 49px
+      }
+    }
+  }
+}
+
+// メインコンテンツ
+.login-in__content{
+  text-align: center;
+  border-top: 1px solid #fff;
+  background-color: #333;
+  padding: 60px 0;
+  &__box {
+    margin: 0 500px;
+    background-color: #fff;
+    h2.in {
+      border-bottom: 1px solid #333;
+      padding: 20px 0;
+    }
+    form {
+      padding: 50px 0 40px 0;
+    }
+    .login-in__content__box__field {
+        padding-bottom: 30px;
+      }
+    .field {
+      input {
+        font-size: 25px;
+        margin-top: 5px;
+      }
+    }
+    .actions {
+      input {
+        background: #ff6b00;
+        padding: 10px 50px;
+        border-radius: 10px;
+        color: #fff;
+      }
+    }
+  }
+  &__links {
+    margin: 0 500px;
+    background-color: #fff;
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    a {
+      text-decoration: none;
+      font-size: 12px;
+      background: #ff6b00;
+      padding: 10px 50px;
+      border-radius: 10px;
+      color: #fff;
+      display: block;
+      margin: 0 80px;
+    }
+  }
+}

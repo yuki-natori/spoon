@@ -1,17 +1,27 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+-# ログインヘッダー
+.login-in__header
+  %h1.login-head
+    = link_to root_path, class: "login-head" do
+      = image_tag "IMG_3179 2.JPG", class: "login-head"
+
+-# メインコンテンツ
+.login-in__content
+  .login-in__content__box
+    %h2.in ログイン画面
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .login-in__content__box__field.field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .login-in__content__box__field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Log in"
+  .login-in__content__links
+    = render "users/shared/links"

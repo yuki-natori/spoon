@@ -3,7 +3,7 @@
 -# ヘッダー
 .card-header
   = link_to root_path do
-    = image_tag "IMG_3179.JPG"
+    = image_tag "IMG_3179 2.JPG"
 
 -# コンテンツ
 .card-new
@@ -81,7 +81,7 @@
               -# カード裏面の番号とは？
         %p.payment
         #card_token
-        = limnk_to  index_purchase_path do
+        = link_to  done_purchase_index_path,  class: "link" do
           = submit_tag "追加する", id: "token_submit", class: "button"
 
 -# フッター

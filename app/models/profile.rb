@@ -38,9 +38,9 @@ class Profile < ApplicationRecord
     zipcode.to_s.insert(3, '-')
   end
 
-  def set_address
-    prefecture_i18n + "\s" + city + "\s" + block + "\s" + building
-  end
+  # def set_address
+  #   prefecture_i18n + "\s" + city + "\s" + block + "\s" + building
+  # end
 
   def set_fullname
     last_name + "\s" + first_name

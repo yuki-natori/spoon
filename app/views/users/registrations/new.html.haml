@@ -1,8 +1,8 @@
 -# 会員情報ヘッダー
 .login-header
   %h1.login-head
-    = link_to "#", class: "login-head" do
-      = image_tag "IMG_3179.JPG", class: "login-head"
+    = link_to root_path, class: "login-head" do
+      = image_tag "IMG_3179 2.JPG", class: "login-head"
   .login-header__nav
     %ol.active
       %li.active 
@@ -10,7 +10,7 @@
         .login-header__nav__round
           %after
       %li 
-        電話番号認証
+        住所登録
         .login-header__nav__round
           %before
           %after
@@ -50,10 +50,10 @@
             %p.login ※英字と数字の両方を含めて設定してください
             .login-main__inner__form__box__check
               .login-main__inner__form__box__check__pass
-                %input.pass(type="checkbox")/
-                %i.pass
-                  %before
-                %label.pass(for="password") パスワードを表示する
+                -# %input.pass(type="checkbox")/
+                -# %i.pass
+                -#   %before
+                -# %label.pass(for="password") パスワードを表示する
 
         .login-main__inner__form
           %h3.login
@@ -78,7 +78,7 @@
           %br/
           .login-main__inner__form__birthday
             .login-main__inner__form__birthday__date
-              -# %i.date
+              %i.date
                 %before
               = f.date_select(:birthday,with_css_classes:'birthday',use_month_numbers:true, start_year:Time.now.year, end_year:1900, )
           %input.date(type="hidden")/
@@ -93,6 +93,6 @@
         .login-main__inner__Confirmation
           %p.Confirmation
             %a.Confirmation(href="#")
-              本人情報の登録について
-              %i.Confirmation
-                %before
+              -# 本人情報の登録について
+              -# %i.Confirmation
+              -#   %before
