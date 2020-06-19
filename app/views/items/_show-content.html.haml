@@ -24,19 +24,22 @@
               %a(href="#") 名前
           %tr
             %th ブランド
-            %td daiwa
+            %td=@item.brand
           %tr
             %th ルアータイプ
-            %td 川
+            %td=@item.category
+          %tr
+            %th 商品の状態
+            %td=@item.condition
           %tr
             %th 配送元
-            %td 北海道
+            %td=@item.shipping_from
           %tr
             %th 発送方法
-            %td レターパック
+            %td=@item.shipping_method
           %tr
             %th 発送までの目安
-            %td 1〜２日
+            %td=@item.days_before_shipping
       %after
     .show-content__container__fee
       %span.fee ¥ 500円

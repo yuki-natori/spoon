@@ -1,0 +1,19 @@
+.done-end {
+  height: 100vh;
+  width: 100vw;
+  background-color: #333;
+  border-top: 1px solid #fff;
+  &__box {
+    text-align: center;
+    margin-top: 250px;
+    h2.end {
+      a.end {
+        color: #000;
+        text-decoration: none;
+        background-color: #fff;
+        padding: 70px 50px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

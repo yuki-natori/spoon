@@ -13,18 +13,18 @@ git clone https://github.com/yuki-natori/spoon.git
 |first_name|string||
 |last_name_kane|string||
 |first_name_kane|string||
-|birth_year|integer||
-|birth_manth|integer||
-|birth_day|integer||
+<!-- |birth_year|integer|| -->
+<!-- |birth_manth|integer|| -->
+|birthday|date||
 |email|string|null: false, unique: true|
 |password|string||
 
 #### Association
-- has_many :comments
+<!-- - has_many :comments -->
 - has_many :items
-- has_many :likes
-- has_many :sns_credentials
-- has_many :trading_partners
+<!-- - has_many :likes -->
+<!-- - has_many :sns_credentials -->
+<!-- - has_many :trading_partners -->
 - has_one :credit_card
 - has_one :profile
 
@@ -43,7 +43,7 @@ git clone https://github.com/yuki-natori/spoon.git
 #### Association
 - belongs_to user
 
-## credit_cardsテーブル
+<!-- ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |authorization_code|integer|null:false,unique:true|
@@ -51,6 +51,16 @@ git clone https://github.com/yuki-natori/spoon.git
 |month|integer|null:false|
 |year|integer|null:false|
 |user_id|references|null:false,index:true,foreign_key:true|
+
+#### Association
+- belongs_to user -->
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null:false|
+|customer_id|string|null:false|
+|card_id|string|null:false|
 
 #### Association
 - belongs_to user
@@ -62,30 +72,30 @@ git clone https://github.com/yuki-natori/spoon.git
 |price|integer|null: false|
 |description|text|null: false|
 |condition|integer|null: false|
-|shipping_fee|integer|null: false|
+<!-- |shipping_fee|integer|null: false| -->
 |shipping_from|integer|null: false|
 |days_before_shipping|integer|null: false|
 |shipping_method|integer|null: false|
-|trade_status|integer|null: false|
-|brand_id|references|index: true, foreign_key: true|
-|category_id|references|null: false. index:true, foreign_key:true|
+<!-- |trade_status|integer|null: false| -->
+<!-- |brand_id|references|index: true, foreign_key: true| -->
+<!-- |category_id|references|null: false. index:true, foreign_key:true| -->
 |user_id|references|null: false. index:true, foreign_key:true|
-|size_id|references|null: false. index:true, foreign_key:true|
+<!-- |size_id|references|null: false. index:true, foreign_key:true| -->
 
 #### Association
-- belongs_to :brand
-- belongs_to :category
+<!-- - belongs_to :brand -->
+<!-- - belongs_to :category -->
 - belongs_to :user
-- belongs_to size
-- has_many :comments
+<!-- - belongs_to size -->
+<!-- - has_many :comments -->
 - has_many :images
-- has_many :likes
-- has_one :order
+<!-- - has_many :likes -->
+<!-- - has_one :order -->
 
 ### Imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|image|string|null: false|
 |item_id|references|null: false, index: true, foreign_key: true|
 
 - belong_to :item
