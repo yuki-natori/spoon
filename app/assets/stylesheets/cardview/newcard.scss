@@ -1,6 +1,9 @@
 .card-new {
   display: block;
-  background-color: #333;
+  background-image: url(3193683_m.jpg);
+  background-size: cover;
+  padding-top: 50px;
+  height: 87vh;
   &__content {
     width: 550px;
     margin: 0 auto;
@@ -171,7 +174,7 @@
       input.button {
         margin: 24px 0 0;
         background: #ea352d;
-        border: 1px solid #ea352d;
+        // border: 1px solid #ea352d;
         color: #fff;
         display: block;
         width: 100%;
@@ -181,6 +184,10 @@
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
+      }
+      .button:hover {
+        opacity: 0.8;
+        background: #e68a85;
       }
     }
   }
@@ -206,7 +213,7 @@
   }
 }
 
-.card-footer {
-  background-color: #333;
-  height: 26vh;
-}
+// .card-footer {
+//   background-color: #333;
+//   height: 26vh;
+// }

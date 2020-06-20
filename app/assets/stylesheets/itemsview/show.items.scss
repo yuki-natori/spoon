@@ -1,5 +1,6 @@
 .show-content{
-  background-color: rgb(8, 8, 8);
+  background-image: url(3360433_m.jpg);
+  background-size: cover;
   padding-top: 55px;
   padding-bottom: 20px;
   &__container {
@@ -62,7 +63,7 @@
             }
           }
           &__sub {
-            line-height: 10;
+            // line-height: 10;
             &__card {
               width: 60px;
               height: 60px;
@@ -158,6 +159,10 @@
       font-weight: 600;
       -webkit-transition: all ease-out .3s;
       transition: all ease-out .3s;
+    }
+    a:hover {
+      opacity: 0.8;
+      background: #e68a85;
     }
     &__commnts {
       padding: 32px 0 0;

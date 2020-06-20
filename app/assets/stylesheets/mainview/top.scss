@@ -147,6 +147,9 @@
               background: 0 0;
             }
           }
+          :hover {
+            opacity: 0.8;
+          }
         }
       }
       &__right {
@@ -323,6 +326,11 @@
                 backface-visibility: hidden;
               }
             }
+            :hover {
+              opacity: 0.9;
+              color: #fff;
+              background: rgb(192, 187, 187);
+            }
           }
           .last:after {
             content: "";
@@ -389,6 +397,11 @@
                 cursor: pointer;
                 line-height: 1.8;
               }
+            }
+            :hover {
+              opacity: 0.9;
+              color: #fff;
+              background: #dfa67d;
             }
           }
         }

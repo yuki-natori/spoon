@@ -5,10 +5,12 @@
         .index-content__head__texts__pan__link
           .index-content__head__texts__pan__link__list
             %span.list
-              %a.list(href="#") トップページ 
+              = link_to root_path, class: "list" do
+                トップページ 
               = icon("fa","angle-right", class: "list")
             %span.list
-              %a.list(href="#") アイテム一覧
+              = link_to items_path, class: "list" do
+                アイテム一覧
               %i.list
       %h1.title 
         .index-content__head__texts__title Item’s

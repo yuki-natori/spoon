@@ -628,3 +628,21 @@
 .js-remove {
   // display: none;
 }
+
+#image-box {
+  align-items: center;
+  text-align: center;
+}
+
+label.img {
+  display: block;
+}
+
+#previews {
+  height: 150px;
+}
+
+i.fa-camera {
+  width: 100%;
+  font-size: 30px;
+}

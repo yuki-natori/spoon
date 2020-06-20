@@ -5,14 +5,14 @@ $(function() {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${num}][image]"
                     id="item_images_attributes_${num}_image"><br>
-                    <div class="js-remove">削除</div>
+                    
                   </div>`;
     return html;
   }
 
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" id="previewimg" width="100px" height="100px">`;
     return html;
   }
 

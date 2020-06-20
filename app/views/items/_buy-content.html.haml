@@ -10,25 +10,26 @@
               = f.label :出品画像
               %span.have-to 必須
           %p.ten-up 最大１０枚までアップロードできます
-          #image-box
-            #previews
-              - if @item.persisted?
-                - @item.images.each_with_index do |image, i|
-                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-                  
-            = f.fields_for :images do |i| 
-              .js-file_group{"data-index": "#{i.index}"}
-                =icon("fa","camera")
-                = i.file_field :image, class: 'js-file'
-                %span.js-remove 削除
+          %label.img
+            #image-box
+              =icon("fa","camera")
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+
+              = f.fields_for :images do |i| 
+                .js-file_group{"data-index": "#{i.index}"}
+                  = i.file_field :image, class: 'js-file'
+                  %span.js-remove 削除
+
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
 
               - if @item.persisted?
-                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-
-            - if @item.persisted?
-              .js-file_group{"data-index": "#{@item.images.count}"}
-                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                .js-remove 削除
+                .js-file_group{"data-index": "#{@item.images.count}"}
+                  = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                  .js-remove 削除
 
       -# 商品名、商品の説明
       .buy-content__inner__items
