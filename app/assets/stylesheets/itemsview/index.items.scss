@@ -1,7 +1,7 @@
 .index-content {
   display: block;
   &__head {
-    padding: 40px 0;
+    // padding: 40px 0;
     position: relative;
     background: #000;
     opacity: 0.9;
@@ -37,12 +37,15 @@
                 color: #999;
               }
               i.list {
+                padding-left: 15px;
+                font-size: 15px;
               }
             }
           }
         }
       }
       h1.title {
+        padding-bottom: 65px;
         text-align: center;
         color: #fff;
       }
@@ -145,7 +148,8 @@
     }
   }
   &__main {
-    background-color: #222;
+    background-image: url(3360433_m.jpg);
+    background-size: cover;
     height: 100vh;
     &__box {
       padding: 40px;
@@ -156,7 +160,10 @@
           display: inline-block;
           height: 250px;
           width: 25%;
-          border: 1px solid #fff;
+          // border: 1px solid #fff;
+        }
+        :hover {
+          opacity: 0.9;
         }
         &__photo {
           height: 80%;
@@ -169,6 +176,7 @@
           }
         }
         &__text {
+          margin: 0 35px;
           display: flex;
           justify-content: space-evenly;
           background-color: #333;

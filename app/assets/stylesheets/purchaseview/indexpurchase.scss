@@ -1,0 +1,82 @@
+.purchase-content {
+  display: block;
+  background-color: #333;
+  text-align: center;
+  padding-bottom: 80px;
+  h2.cotent {
+    color: #fff;
+    padding: 25px 0px;
+    font-size: 27px;
+  }
+  &__item {
+    width: 550px;
+    margin: 0 auto;
+    background: #fff;
+    &__photo {
+      padding: 20px 0;
+      img.photo {
+        width: 250px;
+      }
+    }
+    &__box {
+      margin: 0 72px;
+      padding: 20px 0px;
+      border-top: 1px solid #333;
+      &__info {
+        font-size: 20px;
+        p.infoname {
+          // margin-bottom: 20px;
+        }
+        p.info {
+          background: aliceblue;
+          margin-bottom: 20px;
+          padding-bottom: 5px;
+          position: relative;
+        }
+        ::after {
+          position: absolute;
+          bottom: 1px;
+          right: 178px;
+          content: "";
+          border: 1.5px solid #ff6b00;
+          width: 53px;
+        }
+      }
+      &__addressee {
+        border-top: 1px solid #333;
+        padding-top: 15px;
+        h3.addressee {
+          padding-bottom: 8px;
+        }
+        p.addressee {
+          font-size: 20px;
+          background: aliceblue;
+        }
+      }
+      &__credit {
+        h3.credit {
+          padding-bottom: 8px;
+        }
+        &__number {
+          font-size: 20px;
+          background: aliceblue;
+        }
+      }
+    }
+  }
+  form {
+    button.buy {
+      padding: 5px 225px;
+      margin: 24px 0 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      line-height: 48px;
+      font-size: 24px;
+      border-radius: 4px;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}

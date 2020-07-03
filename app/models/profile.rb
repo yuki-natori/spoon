@@ -12,13 +12,13 @@ class Profile < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }
 
-  validates :nickname,
-    presence: true,
-    length: { maximum: 20 },
-    on: :profile_body
+  # validates :nickname,
+  #   presence: true,
+  #   length: { maximum: 20 },
+  #   on: :profile_body
 
-  validates :body,
-    length: { maximum: 1000 }
+  # validates :body,
+  #   length: { maximum: 1000 }
 
   validates :zipcode,
     presence: true,
@@ -38,9 +38,9 @@ class Profile < ApplicationRecord
     zipcode.to_s.insert(3, '-')
   end
 
-  def set_address
-    prefecture_i18n + "\s" + city + "\s" + block + "\s" + building
-  end
+  # def set_address
+  #   prefecture_i18n + "\s" + city + "\s" + block + "\s" + building
+  # end
 
   def set_fullname
     last_name + "\s" + first_name

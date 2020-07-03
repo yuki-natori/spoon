@@ -20,11 +20,6 @@ ActiveRecord::Schema.define(version: 2020_06_06_030111) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "item_id", null: false
@@ -37,6 +32,13 @@ ActiveRecord::Schema.define(version: 2020_06_06_030111) do
     t.string "name", null: false
     t.integer "price", null: false
     t.text "description", null: false
+    t.integer "condition"
+    t.integer "shipping_from", null: false
+    t.integer "days_before_shipping", null: false
+    t.integer "shipping_method", null: false
+    t.integer "brand"
+    t.integer "category"
+    t.bigint "buyer_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

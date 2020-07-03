@@ -31,7 +31,7 @@
               font-style: normal;
               font-weight: 600;
               line-height: 1.4em;
-              margin: 0;
+              margin-right: 8px;
             }
           }
         }
@@ -120,7 +120,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
@@ -178,7 +178,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
@@ -244,7 +244,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
               span.any {
                 background-color: #bfbfbf;
@@ -358,7 +358,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
@@ -464,15 +464,16 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 1.4em;
-                margin: 0;
+                margin-right: 8px;
               }
             }
           }
           span.en {
-            font-size: 14px;
+            font-size: 30px;
             margin-right: 8px;
           }
           &__form {
+            font-size: 30px;
             align-items: center;
             display: inline-flex;
             width: 100%;
@@ -480,7 +481,7 @@
             font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
             color: #222;
             display: inline-block;
-            font-size: 16px;
+            // font-size: 16px;
             &__box {
               display: inline-block;
               position: relative;
@@ -526,7 +527,7 @@
       }
       &__submit {
         margin: 0px auto 24px;
-        input.exhibitin {
+        button.exhibitin {
           background-color: #ea352d;
           color: #fff;
           margin-bottom: 24px;
@@ -604,3 +605,106 @@
     }
   }
 }
+
+#image-box {
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  background: ghostwhite;
+  #previews {
+    display: flex;
+  }
+}
+
+
+
+
+
+.js-file {
+  // display: none;
+}
+
+.js-remove {
+  // display: none;
+}
+
+#image-box {
+  align-items: center;
+  text-align: center;
+}
+
+label.img {
+  display: block;
+}
+
+#previews {
+  height: 150px;
+}
+
+i.fa-camera {
+  width: 100%;
+  font-size: 30px;
+}
+
+
+// モーダルウィンドウ
+#overlay {
+  //モーダルウィンドウの背景を設定
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  //透過度をつける
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+  }
+  
+  #modalWindow {
+  // モーダルウィンドウの画面を設定(高さ・幅は調整ください)
+    width: 500px;
+    height: 200px;
+    position: absolute;
+  //トップからの場所を指定（topをいじれば高さが調整できます）
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+  //flexboxで子要素のボタンとメッセージボックスの要素を配置する
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    .modal-message-box {
+      width: 100%;
+  //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
+      height: calc(100% - 60px);
+      text-align: center;
+  //flexboxで文字の配置を決める（縦方向、中央揃え）
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  
+    #modal-close-btn {
+      width: 50%;
+      height: 60px;
+    }
+  
+    #new-comformation-btn {
+      width: 50%;
+      height: 60px;
+    }
+  }
+  
+  .item-new-btn {
+  //削除ボタンの非表示
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }

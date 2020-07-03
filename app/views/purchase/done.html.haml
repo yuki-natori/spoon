@@ -1,3 +1,10 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
+-# ヘッダー
+.buy-header
+  = link_to root_path do
+    = image_tag "IMG_3179 2.JPG"
+
+-# 購入完了フォーム
+.done-end
+  .done-end__box
+    %h2.end 
+      = link_to "ご購入ありがとうございます♪", root_path, class: "end"

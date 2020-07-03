@@ -21,27 +21,40 @@
           %tr
             %th 出品者
             %td
-              %a(href="#") 名前
+              =link_to @item.user.nickname 
           %tr
             %th ブランド
-            %td daiwa
+            %td=@item.brand
           %tr
             %th ルアータイプ
-            %td 川
+            %td=@item.category
+          %tr
+            %th 商品の状態
+            %td=@item.condition
           %tr
             %th 配送元
-            %td 北海道
+            %td=@item.shipping_from
           %tr
             %th 発送方法
-            %td レターパック
+            %td=@item.shipping_method
           %tr
             %th 発送までの目安
-            %td 1〜２日
+            %td=@item.days_before_shipping
       %after
     .show-content__container__fee
       %span.fee ¥ 500円
-    = link_to new_card_path, class: "btn" do
-      購入画面へ
+    - if user_signed_in? && current_user.id == @item.user_id
+      = link_to edit_item_path, class: "btn edit" do
+        編集画面へ
+    - elsif @item.buyer_id.present?
+      = link_to item_path, class: "btn sall" do
+        売り切れ
+    - elsif user_signed_in? == false
+      = link_to new_user_registration_path, class: "btn edit" do
+        まずは新規登録へ
+    - else
+      = link_to purchase_url(@item.id), class: "btn buy" do
+        購入画面へ
     .show-content__container__commnts
       %p.commnts= @item.description
     .show-content__container__likes

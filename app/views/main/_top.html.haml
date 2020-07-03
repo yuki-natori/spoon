@@ -14,13 +14,13 @@
       .header__nav__top__center
         %ul.group
           %li.menu
-            %a.item(href="#")
+            %a.item(href="#question") 
               spoon500とは？
           %li.menu
-            %a.item(href="#")
+            %a.item(href="#use")
               spoon500の使い方
           %li.menu
-            %a.item(href="#")
+            %a.item(href="#make")
               スプーンの作り方
       .header__nav__top__right
         %ul.login
@@ -53,10 +53,7 @@
           %ul.itemright
             - if user_signed_in?
               %li.lists
-                %a.list(href="#")
-                  one
-              %li.lists
-                -# = link_to user_path(current_user) do
+                = link_to mypage_index_path(current_user), class: "list" do
                   マイページ
               %li.lists
                 = link_to destroy_user_session_path, method: 'delete', class: "list" do

@@ -1,29 +1,27 @@
 -# 完了ヘッダー
 .login-header
   %h1.login-head
-    = link_to "#", class: "login-head" do
-      = image_tag "IMG_3179.JPG", class: "login-head"
+    = link_to root_path, class: "login-head" do
+      = image_tag "IMG_3179 2.JPG", class: "login-head"
   .login-header__nav
     %ol.active
-      %li.active 
+      %li
         会員情報
         .login-header__nav__round
           %after
       %li 
-        電話番号認証
+        住所登録
         .login-header__nav__round
           %before
           %after
-      %li 
+      %li.active 
         完了
         .login-header__nav__round
           %before
       %after
 
 -# 完了フォーム
-.login-main
-  %sction.login
-    %h2.login 
-      = link_to "トップへ戻る", root_path
-      .login-main__inner
-  
+.login-end
+  .login-end__box
+    %h2.end 
+      = link_to "登録を完了しました", root_path, class: "end"

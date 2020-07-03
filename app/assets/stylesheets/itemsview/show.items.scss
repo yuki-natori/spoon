@@ -1,5 +1,6 @@
 .show-content{
-  background-color: rgb(8, 8, 8);
+  background-image: url(3360433_m.jpg);
+  background-size: cover;
   padding-top: 55px;
   padding-bottom: 20px;
   &__container {
@@ -62,7 +63,7 @@
             }
           }
           &__sub {
-            line-height: 10;
+            // line-height: 10;
             &__card {
               width: 60px;
               height: 60px;
@@ -126,6 +127,10 @@
                 color: #0099e8;
                 text-decoration: none;
               }
+              :hover {
+                opacity: 0.8;
+                background: #fff;
+              }
             }
           }
         }
@@ -144,13 +149,29 @@
         color: #fff;
       }
     }
+    a.edit {
+      background: #ff6b00;
+    }
+    a.edit:hover {
+      opacity: 0.8;
+      background: #f5a56d;
+    }
+    a.sall {
+      background: rgb(126, 123, 123);
+    }
+    a.buy {
+      background: #ea352d;
+    }
+    a.buy:hover {
+      opacity: 0.8;
+      background: #e68a85;
+    }
     a.btn {
       text-decoration: none;
       font-size: 24px;
       line-height: 60px;
       display: block;
       margin-top: 16px;
-      background: #ea352d;
       font-size: 25px;
       color: #fff;
       line-height: 56px;
