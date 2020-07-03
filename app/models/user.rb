@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
-  has_many :credits
+  has_one :card
   has_one :profile
 
   validates :nickname,
@@ -39,7 +39,7 @@ class User < ApplicationRecord
   validates :password,
     presence: true,
     confirmation: { message: "パスワードとパスワード（確認）が一致しません" },
-    length: { in: 6..128, message: "パスワードは6文字以上128文字以下で入力してください" },
+    length: { in: 7..128, message: "パスワードは7文字以上128文字以下で入力してください" },
     format: { with: /\A(?=.*[^\d])+/, allow_blank: true, message: "数字のみのパスワードは設定できません" }
 
   def self.from_omniauth(auth)

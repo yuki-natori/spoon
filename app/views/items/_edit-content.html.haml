@@ -10,26 +10,26 @@
               = f.label :出品画像
               %span.have-to 必須
           %p.ten-up 最大１０枚までアップロードできます
-          #image-box
-            #previews
+          %label.img
+            #image-box
+              =icon("fa","camera")
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+
+              = f.fields_for :images do |i| 
+                .js-file_group{"data-index": "#{i.index}"}
+                  = i.file_field :image, class: 'js-file'
+                  %span.js-remove 削除
+
+                -# - if @item.persisted?
+                -#   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+
               - if @item.persisted?
-                - @item.images.each_with_index do |image, i|
-                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-                  = link_to '削除', item_path(@item), method: :delete
-
-            = f.fields_for :images do |i| 
-              .js-file_group{"data-index": "#{i.index}"}
-                = i.file_field :image, class: 'js-file'
-                %span.js-remove 削除
-                =icon("fa","camera")
-                
-              -# - if @item.persisted?
-              -#   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-
-            - if @item.persisted?
-              .js-file_group{"data-index": "#{@item.images.count}"}
-                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                .js-remove 削除
+                .js-file_group{"data-index": "#{@item.images.count}"}
+                  = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                  .js-remove 削除
 
       -# 商品名、商品の説明
       .buy-content__inner__items
@@ -48,7 +48,7 @@
               .buy-content__inner__items__description__items__body__box
                 = f.label :商品の説明
                 %span.have-to 必須
-            = f.text_area :description, cols: "30", rows: "10", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            = f.text_area :description, cols: "30", rows: "10", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）去年、釣具店で購入しました。数回釣行で使用しました。状態もキレイですのですぐ利用できます。"
             .buy-content__inner__items__description__items__text-sum
 
       -# 商品の詳細
@@ -58,34 +58,32 @@
           .buy-content__inner__dateils__style__body
             .buy-content__inner__dateils__style__body__box
               .buy-content__inner__dateils__style__body__box__item
-                %label.title(for="#") カテゴリー
-                %span.have-to 必須
+                = f.label :カテゴリー, class: "title"
+                %span.any.have-to 任意
             .buy-content__inner__dateils__style__body__form
               .buy-content__inner__dateils__style__body__form__box
-                %select(name="category")
-                  %option(value="選択してください")
+                = f.select :category, Item.categories.keys, placeholder: "選択してください"
                 %i.drop-dwen
                 
         .buy-content__inner__dateils__style
           .buy-content__inner__dateils__style__body
             .buy-content__inner__dateils__style__body__box
               .buy-content__inner__dateils__style__body__box__item
-                %label.title(for="#") ブランド
+                = f.label :ブランド, class: "title"
                 %span.any.have-to 任意
             .buy-content__inner__dateils__style__body__form
               .buy-content__inner__dateils__style__body__form__box
-                %input(type="text")/
+                = f.select :brand, Item.brands.keys, placeholder: "選択してください"
 
         .buy-content__inner__dateils__style
           .buy-content__inner__dateils__style__body
             .buy-content__inner__dateils__style__body__box
               .buy-content__inner__dateils__style__body__box__item
-                %label.title(for="#") 商品の状態
-                %span.have-to 必須
+                = f.label :商品の状態, class: "title"
+                %span.any.have-to 任意
             .buy-content__inner__dateils__style__body__form
               .buy-content__inner__dateils__style__body__form__box
-                %select(name="category")
-                  %option(value="選択してください")
+                = f.select :condition, Item.conditions.keys, placeholder: "選択してください"
                 %i.drop-dwen
 
       -# 配送について
@@ -97,43 +95,40 @@
           .buy-content__inner__delivery__style__body
             .buy-content__inner__delivery__style__body__box
               .buy-content__inner__delivery__style__body__box__item
-                %label.title(for="#") 配送料の負担
+                = f.label :配送方法, class: "title"
                 %span.have-to 必須
             .buy-content__inner__delivery__style__body__form
               .buy-content__inner__delivery__style__body__form__box
-                %select(name="category")
-                  %option(value="選択してください")
+                = f.select :shipping_method, Item.shipping_methods.keys,placeholder: "日本郵便：スマートレター" 
                 %i.drop-dwen
 
         .buy-content__inner__delivery__style
           .buy-content__inner__delivery__style__body
             .buy-content__inner__delivery__style__body__box
               .buy-content__inner__delivery__style__body__box__item
-                %label.title(for="#") 配送元の地域
+                = f.label :配送元の地域, class: "title"
                 %span.have-to 必須
             .buy-content__inner__delivery__style__body__form
               .buy-content__inner__delivery__style__body__form__box
-                %select(name="category")
-                  %option(value="選択してください")
+                = f.select :shipping_from, Item.shipping_froms.keys, placeholder: "北海道" 
                 %i.drop-dwen
 
         .buy-content__inner__delivery__style
           .buy-content__inner__delivery__style__body
             .buy-content__inner__delivery__style__body__box
               .buy-content__inner__delivery__style__body__box__item
-                %label.title(for="#") 配送までの日数
+                = f.label :配送までの日数, class: "title"
                 %span.have-to 必須
             .buy-content__inner__delivery__style__body__form
               .buy-content__inner__delivery__style__body__form__box
-                %select(name="category")
-                  %option(value="選択してください")
+                = f.select :days_before_shipping, Item.days_before_shippings.keys, placeholder: "選択してください"
                 %i.drop-dwen
 
       -# 販売価格、送信ボタン
       .buy-content__inner__btn
-        %p.dateils 価格 (¥300~9,999,999)
-        %a(href="#")
-          %i
+        -# %p.dateils 価格 (¥300~9,999,999)
+        -# %a(href="#")
+        -#   %i
         .buy-content__inner__btn__buys
           .buy-content__inner__btn__buys__style
             .buy-content__inner__btn__buys__style__body
@@ -143,22 +138,27 @@
             %span.en ¥
             .buy-content__inner__btn__buys__style__form
               .buy-content__inner__btn__buys__style__form__box
-                = f.text_field :price, placeholder: "0"
+                = f.select :price, Item.prices.keys, placeholder: "500"
 
           .buy-content__inner__btn__buys__style
             .buy-content__inner__btn__buys__style__fee
               .buy-content__inner__btn__buys__style__fee__ten
-                販売手数料(10%)
-            %span.mainas
-
-          .buy-content__inner__btn__buys__style
-            .buy-content__inner__btn__buys__style__profit
-              販売利益
+                販売手数料込み
             %span.mainas
 
         .buy-content__inner__btn__submit
-          = f.submit "出品する", class: "exhibitin" 
-          %button.draft(type="button") 下書き保存
-          %a(href="#") もどる
+          %button.exhibitin#modal-open-btn(type="button") 出品する
+          = link_to "", method: :new, id: 'item-new-btn'
+          #overlay
+            #modalWindow
+              .modal-message-box
+                %div 確認
+                %div 本当に出品しますか？
+              %button#modal-close-btn(type="button") キャンセル
+              = f.submit "出品する", id: "new-comformation-btn" 
+
+          = link_to root_path do
+            もどる
         %p.exhibition
           禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+

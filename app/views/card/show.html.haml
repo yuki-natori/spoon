@@ -1,31 +1,12 @@
--# クレジット確認ページ
+-# カード登録完了フォーム
 
 -# ヘッダー
 .card-header
   = link_to root_path do
-    = image_tag "IMG_3179.JPG"
+    = image_tag "IMG_3179 2.JPG"
 
-.card-show
-  .card-show__content
-    .card-show__content__head
-      %label.head 登録クレジットカード情報
-      %br
-    .card-show__content__number
-      %h4.number クレジットカード番号
-      .card-show__content__number__credit
-        = "**** **** **** " + @default_card_information.last4
-        %br
-    .card-show__content__yearly
-      %h4.yearly 月/年
-      .card-show__content__yearly__my
-        - exp_month = @default_card_information.exp_month.to_s
-        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-        = exp_month + " / " + exp_year
-    .card-show__content__form
-      = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-        %input{ type: "hidden", name: "card_id", value: "" }
-        %button.destroy 削除する
-    .card-show__content__border
-
--# フッター
-.card-footer
+-# 完了フォーム
+.login-end
+  .login-end__box
+    %h2.end 
+      = link_to "登録を完了しました", root_path, class: "end"

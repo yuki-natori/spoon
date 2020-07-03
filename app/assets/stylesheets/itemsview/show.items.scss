@@ -127,6 +127,10 @@
                 color: #0099e8;
                 text-decoration: none;
               }
+              :hover {
+                opacity: 0.8;
+                background: #fff;
+              }
             }
           }
         }
@@ -145,13 +149,29 @@
         color: #fff;
       }
     }
+    a.edit {
+      background: #ff6b00;
+    }
+    a.edit:hover {
+      opacity: 0.8;
+      background: #f5a56d;
+    }
+    a.sall {
+      background: rgb(126, 123, 123);
+    }
+    a.buy {
+      background: #ea352d;
+    }
+    a.buy:hover {
+      opacity: 0.8;
+      background: #e68a85;
+    }
     a.btn {
       text-decoration: none;
       font-size: 24px;
       line-height: 60px;
       display: block;
       margin-top: 16px;
-      background: #ea352d;
       font-size: 25px;
       color: #fff;
       line-height: 56px;
@@ -159,10 +179,6 @@
       font-weight: 600;
       -webkit-transition: all ease-out .3s;
       transition: all ease-out .3s;
-    }
-    a:hover {
-      opacity: 0.8;
-      background: #e68a85;
     }
     &__commnts {
       padding: 32px 0 0;

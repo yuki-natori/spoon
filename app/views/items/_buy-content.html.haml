@@ -146,14 +146,17 @@
                 販売手数料込み
             %span.mainas
 
-          -# .buy-content__inner__btn__buys__style
-          -#   .buy-content__inner__btn__buys__style__profit
-          -#     販売利益
-          -#   %span.mainas
-
         .buy-content__inner__btn__submit
-          = f.submit "出品する", class: "exhibitin" 
-          -# %button.draft(type="button") 下書き保存
+          %button.exhibitin#modal-open-btn(type="button") 出品する
+          = link_to "", method: :new, id: 'item-new-btn'
+          #overlay
+            #modalWindow
+              .modal-message-box
+                %div 確認
+                %div 本当に出品しますか？
+              %button#modal-close-btn(type="button") キャンセル
+              = f.submit "出品する", id: "new-comformation-btn" 
+
           = link_to root_path do
             もどる
         %p.exhibition

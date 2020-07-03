@@ -169,7 +169,8 @@
               font-size: 16px;
             }
             p.login {
-              margin: 8px 0 0;
+              font-size: 15px;
+              margin-top: 15px;
               line-height: 1.5;
               color: #fff;
             }
@@ -229,6 +230,7 @@
           }
         }
         &__form {
+          text-align: center;
           margin: 24px 0 0;
           h3.login {
             font-size: 16px;
@@ -241,6 +243,7 @@
           }
         }
         &__form {
+          text-align: center;
           margin: 24px 0 0;
           div {
             label {
@@ -586,6 +589,9 @@
         background-color: #fff;
         padding: 70px 50px;
         border-radius: 5px;
+      }
+      :hover {
+        opacity: 0.8;
       }
     }
   }

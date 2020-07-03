@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_06_030111) do
     t.integer "shipping_method", null: false
     t.integer "brand"
     t.integer "category"
+    t.bigint "buyer_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
