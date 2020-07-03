@@ -1,11 +1,8 @@
 class PurchaseController < ApplicationController
   require 'payjp'
+  before_action :set_item, only:[:show, :pay]
 
-  def index
-    # @item = Item.find_by(params[:id])
-    @items = Item.all.includes(:images)
-    # @buyer = @items.update_all(buyer_id: current_user.id)
-    
+  def show
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -28,6 +25,12 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
+  @buyer = @item.update(buyer_id: current_user.id)
   redirect_to action: 'done' #完了画面に移動
   end
+
+  private
+    def set_item
+      @item = Item.find(params[:id])
+    end
 end

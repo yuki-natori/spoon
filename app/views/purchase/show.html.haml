@@ -7,14 +7,14 @@
 .purchase-content
   %h2.cotent 購入を確定しますか？
   .purchase-content__item
-    - @items.find do |item|
+    - @item.images.find do |image|
       .purchase-content__item__photo
-        = image_tag item.images.first.image.url, class: "photo"
+        = image_tag image.image.url, class: "photo"
       .purchase-content__item__box
         .purchase-content__item__box__info
-          %p.info.infoname= item.name
+          %p.info.infoname= @item.name
           %p.info
-            = item.price
+            = @item.price
             円
         .purchase-content__item__box__addressee
           %h3.addressee お届け先

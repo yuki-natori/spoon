@@ -53,7 +53,7 @@
       = link_to new_user_registration_path, class: "btn edit" do
         まずは新規登録へ
     - else
-      = link_to purchase_index_url(@item.id), class: "btn buy" do
+      = link_to purchase_url(@item.id), class: "btn buy" do
         購入画面へ
     .show-content__container__commnts
       %p.commnts= @item.description
