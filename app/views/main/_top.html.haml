@@ -34,7 +34,6 @@
             %before
       .header__nav__under__service
         .header__nav__under__service__itemleft
-          -# ドロップダウンメニュー
           %ul.itemleft
             %li.lists
               = link_to items_path, class: "list" do
@@ -52,9 +51,9 @@
         .header__nav__under__service__itemright
           %ul.itemright
             - if user_signed_in?
-              %li.lists
-                = link_to mypage_index_path(current_user), class: "list" do
-                  マイページ
+              -# %li.lists
+              -#   = link_to mypage_index_path(current_user), class: "list" do
+              -#     マイページ
               %li.lists
                 = link_to destroy_user_session_path, method: 'delete', class: "list" do
                   ログアウト
