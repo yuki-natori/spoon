@@ -9,15 +9,15 @@ class Item < ApplicationRecord
   }
 
   enum category: {
-    選択してください:1,川:2,海:3,どちらでも:4,不明:5
+    "-----":1,川:2,海:3,どちらでも:4,不明:5
   },_prefix: true
 
   enum brand: {
-    選択してください:1,ダイワ:2,シマノ:3,不明:4
+    "-----":1,ダイワ:2,シマノ:3,不明:4
   },_prefix: true
 
   enum condition: {
-    選択してください:1,オリジナル:2,新品:3,中古:4,使用感有り:5
+    "-----":1,オリジナル:2,新品:3,中古:4,使用感有り:5
   },_prefix: true
 
   enum days_before_shipping: {
