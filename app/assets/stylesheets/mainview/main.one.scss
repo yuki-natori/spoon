@@ -135,8 +135,8 @@ input[name="slideshow"] {
 	padding-top: 120px;
 }
 
-// @media (max-width: 450px) {
-// 	.slideshow {
-// 		padding-top: 40px;
-// 	}
-// }
+@media (max-width: 430px) {
+	.slideshow {
+		padding-top: 40px;
+	}
+}

@@ -189,3 +189,31 @@
     display: contents;
   }
 }
+
+@media (max-width: 380px) {
+  .main-two h2.consept {
+    font-size: 22px;
+    padding: 50px 0px;
+    display: table-cell;
+  }
+  .main-two__content__left {
+    padding: 10px;
+    display: contents;
+  }
+  .main-two__content__right {
+    padding: 10px;
+    display: contents;
+  }
+  .main-two__content__left__txtbox h3.title {
+    font-size: 20px;
+  }
+  .main-two__content__right__txtbox h3.title {
+    font-size: 20px;
+  }
+  .main-two__content__left__txtbox__text p.attention {
+    font-size: 15px;
+  }
+  .main-two__content__right__txtbox__text p {
+    font-size: 15px;
+  }
+}
