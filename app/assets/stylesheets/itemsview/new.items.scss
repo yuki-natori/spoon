@@ -617,18 +617,6 @@
   }
 }
 
-
-
-
-
-.js-file {
-  // display: none;
-}
-
-.js-remove {
-  // display: none;
-}
-
 #image-box {
   align-items: center;
   text-align: center;
@@ -665,7 +653,7 @@ i.fa-camera {
   #modalWindow {
   // モーダルウィンドウの画面を設定(高さ・幅は調整ください)
     width: 500px;
-    height: 200px;
+    height: 160px;
     position: absolute;
   //トップからの場所を指定（topをいじれば高さが調整できます）
     top: 20%;
@@ -707,4 +695,11 @@ i.fa-camera {
     margin: 0;
     padding: 0;
     border: 0;
+  }
+
+  @media (max-width: 430px) {
+    #modalWindow {
+      width: 20rem;
+      height: 150px;
+    }
   }

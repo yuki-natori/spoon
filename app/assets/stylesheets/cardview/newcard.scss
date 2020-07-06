@@ -213,7 +213,8 @@
   }
 }
 
-// .card-footer {
-//   background-color: #333;
-//   height: 26vh;
-// }
+@media (max-width: 760px) {
+  .card-new__content {
+    width: 20rem;
+  }
+}

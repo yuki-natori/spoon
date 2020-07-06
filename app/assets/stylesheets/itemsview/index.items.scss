@@ -150,7 +150,7 @@
   &__main {
     background-image: url(3360433_m.jpg);
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     &__box {
       padding: 40px;
       &__card {
@@ -193,5 +193,32 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 770px) {
+  .index-content__main__box__card a.card {
+    display: inline-grid;
+  }
+  .index-content__main__box__card__text h4.card {
+    font-size: 20px;
+  }
+  .index-content__main__box__card__text span.card {
+    display: none;
+  }
+  .index-content__head__texts__pan {
+    display: none;
+  }
+  .index-content__head__texts h1.title {
+    padding: 25px;
+  }
+  .index-content__main {
+    height: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .index-content__main__box__card a.card {
+    width: 20rem;
   }
 }

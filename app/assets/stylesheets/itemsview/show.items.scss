@@ -284,3 +284,15 @@
     }
   }
 }
+
+@media (max-width: 430px) {
+  .show-content__container {
+    width: 23rem;
+  }
+  .show-content__container__message {
+    width: 23rem;
+  }
+  .show-content__container__body table.list {
+    margin-top: 25px;
+  }
+}

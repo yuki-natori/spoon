@@ -169,3 +169,15 @@
     }
   }
 }
+
+@media (max-width: 430px) {
+  .main-three {
+    padding-top: 50px;
+  }
+  .main-three__header h2.title {
+    font-size: 30px;
+  }
+  .main-three__movie__list {
+    width: 100%;
+  }
+}
